@@ -1,0 +1,18 @@
+{
+  "name": "registrationform",
+  "version": "1.0.0",
+  "description": "A registration form application built with Express and Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shruti pandey",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3",
+    "mongoose": "^8.1.0",
+    "nodemon": "^3.0.3"
+    
+  }
+}

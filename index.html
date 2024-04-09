@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
+    <title>Fruitify</title>
+
+    <!-- External stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styleindex.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Background overlay -->
+    <div class="background"></div>
+
+    <!-- Navigation bar -->
+    <nav>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" />
+      </div>
+      <!-- Navigation links -->
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/manual">MANUAL</a></li>
+        <li><a href="/feedback">FEEDBACK</a></li>
+      </ul>
+    </nav>
+
+    <!-- Heading -->
+    <h1>FRUITIFY</h1>
+
+    <!-- Form for image upload -->
+    <form
+      action="/predict"
+      method="POST"
+      enctype="multipart/form-data"
+      id="uploadForm"
+    >
+      <div class="container">
+        <!-- Hidden file input for image upload -->
+        <input type="file" id="file" accept="image/*" name="file" hidden />
+        <!-- Image upload area -->
+        <div class="img-area" data-img="">
+          <img src="{{ url_for('static', filename='upload.png') }}" />
+          <i class="icon"></i>
+          <h3>Upload Image</h3>
+          <p>Image should be in<span> .jpg/.jpeg </span></p>
+        </div>
+        <!-- Button to select image -->
+        <button type="button" class="select-image">Select Image</button>
+        <!-- Button to initiate prediction -->
+        <button type="button" class="select-image-index" onclick="predict()">
+          Predict
+        </button>
+        <!-- Button to view results -->
+        <button type="button" class="resultBtn" onclick="handleResult()">
+          Results
+        </button>
+      </div>
+    </form>
+
+    <!-- External script -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <!-- JavaScript functions -->
+    <script>
+      // Function to predict based on selected image
+      function predict() {
+        var fileInput = document.getElementById("file");
+        if (fileInput.files.length === 0) {
+          // If no file is selected, display alert
+          alert("Please select an image first.");
+        } else {
+          // If image is selected, submit the form for prediction
+          document.getElementById("uploadForm").submit();
+        }
+      }
+
+      // Function to handle result button click
+      function handleResult() {
+        var fileInput = document.getElementById("file");
+        if (fileInput.files.length === 0) {
+          // If no file is selected, display alert
+          alert("Please select an image first.");
+        } else {
+          // If image is selected, redirect to the result page
+          window.location.href = "/result";
+        }
+      }
+    </script>
+  </body>
+</html>

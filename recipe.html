@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
+    <title>Fruitify</title>
+    <!-- External stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='recipe.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Background overlay -->
+    <div class="background"></div>
+    <!-- Navigation bar -->
+    <nav>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" />
+      </div>
+      <!-- Navigation links -->
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/manual">MANUAL</a></li>
+        <li><a href="/feedback">FEEDBACK</a></li>
+      </ul>
+    </nav>
+    <!-- Heading -->
+    <div class="heading">
+      <h1>RECIPES</h1>
+    </div>
+    <!-- Recipe section -->
+    <div class="textt">
+      {% for fruit, recipes in recommended_recipes.items() %}
+      <h1>Recommended recipes for {{ fruit }}:</h1>
+      <br />
+
+      <h2>{% for recipe in recipes %}</h2>
+      <br />
+      <h3>{{ recipe }} {% if not loop.last %}, {% endif %}</h3>
+      <br />
+      {% endfor %}<br />
+      {% if not loop.last %}{% endif %}<br />
+      {% endfor %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title -->
+    <title>Manual</title>
+
+    <!-- External stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='stylemanual.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Background overlay -->
+    <div class="background"></div>
+
+    <!-- Navigation bar -->
+    <nav>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" />
+      </div>
+
+      <!-- Navigation links -->
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/manual">MANUAL</a></li>
+        <li><a href="/feedback">FEEDBACK</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="heading">
+      <!-- Heading -->
+      <h1>MANUAL</h1>
+
+      <!-- Manual steps -->
+      <p>1. User will upload an image from his/her computer by clicking on select image button:</p>
+          <p>(a)The picture uploaded must be in correct format of .JPEG/.PNG/.JPG</p>
+          <p>(b)The uploaded picture must be clicked against a clear background and proper lightening</p>
+          <p>(c)User can upload the image of single fruit or multiple fruits.</p>
+          <p>(d)The uploaded image should contain either apple, banana, grape, orange (currently).</p>
+      <p>2. The user will get the detected image of fruits by clicking on Predict.</p>
+      <p>3. When the user will click on result ,it will give the names of the predicted fruits.</p>
+      <p>4. If the user want to know the recipes of the predicted fruits,user can click on next.</p>
+      <p>5. When the user click on next button ,he/she will be asked for his/her preference.</p>
+      <p>6. After clicking on next, the website will show recipes according to his/her preference.</p>
+      <p>7. The user will be asked for his/her feedback,for future modifications.</p>
+    </div>
+
+    <!-- Next section -->
+    <div class="data">
+      <!-- Next button with link -->
+      <a href="/feedback" class="next">NEXT</a>
+    </div>
+
+    <!-- External script -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

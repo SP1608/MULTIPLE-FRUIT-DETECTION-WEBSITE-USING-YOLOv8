@@ -1,0 +1,142 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Set the font family for the body */
+    outline: none; /* Remove outline on focus */
+    overflow-y:scroll;
+}
+
+/* Background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(images.jpeg); /* Adjust path to your background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(5px); /* Apply blur effect */
+    height: 100%;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: aliceblue;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  
+    justify-content: space-between;
+    text-align: right;
+    margin-top: 0px; /* Adjust top margin as needed */
+}
+
+nav .logo img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 15px;
+    margin-right: 0px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+    padding: 25px 20px;
+    margin-right: 0px;
+    align-items: end;
+    align-self: center;
+}
+
+nav ul li a:hover {
+    color: brown;
+}
+
+/* Form container */
+.container {
+    width: 400px; /* Set the width of the form container */
+    background: #fff; /* Background color of the container */
+    box-shadow: 0 0 8px rgba(250, 250, 250, 0.6); /* Apply box shadow */
+    opacity: 0.6; /* Set opacity */
+    margin-left: 35%; /* Adjust horizontal margin as needed */
+    margin-top: 5%; /* Adjust vertical margin as needed */
+    padding: 20px; /* Add padding */
+    border-radius: 8px; /* Apply border radius */
+}
+
+/* Form styles */
+form {
+    width: 100%;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+form h1 {
+    padding: 10px 0;
+    font-weight: bold; /* Set font weight for heading */
+}
+
+.id {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+select {
+    width: calc(100% - 20px); /* Set width for select input */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Apply border radius */
+    background-color: #e6e6ff; /* Change background color */
+}
+
+i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #aaa; /* Set color for icon */
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Background color for submit button */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Change background color on hover */
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
+    <title>ABOUT</title>
+    <!-- External stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav>
+      <!-- Background overlay -->
+      <div class="background"></div>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" />
+      </div>
+      <!-- Navigation links -->
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/manual">MANUAL</a></li>
+        <li><a href="/feedback">FEEDBACK</a></li>
+      </ul>
+    </nav>
+    <!-- Main content -->
+    <div class="heading">
+      <!-- Heading -->
+      <h1>ABOUT US</h1>
+      <!-- Introduction -->
+      <p>Welcome to Fruitify –</p>
+      <!-- Description -->
+      <p>
+        Your ultimate companion for fruit exploration! With advanced technology,
+        we detect fruits accurately from uploaded images, including apple,
+        grapes, orange, and banana. Our personalized recommendation system
+        suggests recipes based on your taste preferences, ensuring delightful
+        culinary experiences. Fruitify's vision is to make fruit exploration
+        fun, accessible, and rewarding for everyone. We're committed to
+        empowering users to make healthier choices and explore the endless
+        possibilities of fruits.
+      </p>
+      <!-- Call to action -->
+      <p>Discover, Detect, and Delight in the vibrant world of fruits!</p>
+    </div>
+    <!-- Next section -->
+    <div class="data">
+      <a href="/manual" class="next">NEXT</a>
+    </div>
+  </body>
+</html>

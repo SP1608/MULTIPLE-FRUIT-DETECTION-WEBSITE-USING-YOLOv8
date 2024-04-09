@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
+    <title>Fruitify</title>
+
+    <!-- External stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Background overlay -->
+    <div class="background"></div>
+    <!-- Navigation bar -->
+    <nav>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" />
+      </div>
+      <!-- Navigation links -->
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/manual">MANUAL</a></li>
+        <li><a href="/feedback">FEEDBACK</a></li>
+      </ul>
+    </nav>
+    <!-- Main content container -->
+    <div class="container">
+      <!-- Feedback form -->
+      <form action="/feedback" method="POST">
+        <!-- Heading -->
+        <h1>Give your Feedback</h1>
+        <!-- Input fields for name, email, and feedback -->
+        <input
+          type="text"
+          class="box"
+          id="name"
+          name="name"
+          placeholder="Name"
+          required
+        />
+        <br />
+        <input
+          type="text"
+          class="box"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <br />
+        <textarea
+          type="text"
+          class="box"
+          cols="15"
+          rows="5"
+          id="enter_your_opinions_here"
+          name="enter_your_opinions_here"
+          placeholder="Enter your opinions here"
+          required
+        ></textarea>
+        <br />
+        <!-- Submit button -->
+        <button>Send</button>
+      </form>
+    </div>
+    <!-- External script -->
+    <script src="static/index.js"></script>
+  </body>
+</html>

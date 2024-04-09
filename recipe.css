@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh; /* Set body minimum height to 100vh */
+    width: 100vw;
+    overflow-x: scroll;
+    overflow-y: scroll; /* Add vertical scrollbar */
+}
+
+.background {
+    position: fixed; /* Change position to fixed */
+    top: 0;
+    left: 0;
+    width: 100%; /* Increase horizontal size */
+    height: 100%; /* Set height to 100% */
+    background-image: url(images.jpeg);
+    background-repeat: no-repeat; /* Remove background repeat */
+    background-size: cover; /* Cover the entire background */
+    z-index: -1;
+    filter: blur(5px);
+}
+html{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+.heading{
+	width: 700px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 20px auto;
+
+
+  }
+  .heading h1{
+	
+    font-size: 65px;
+	color: #000;
+	font-weight: 600px;
+	margin-bottom: 25px;
+	
+	margin-left: 40px;
+	position: relative;
+	
+  }
+  .heading h1::after{
+	content:"";
+	position:absolute;
+	width:100%;
+	height:4px;
+	display:block;
+	margin:0 auto;
+	background-color:#4caf50;
+  }
+  
+
+  .textt{
+    text-align: justify;
+  }
+
+.heading h1 {
+    font-size: 65px; /* Adjust the font size as needed */
+    color: #000;
+    font-weight: 600px;
+    margin-bottom: 25px;
+    margin-left: 40px;
+    position: relative;
+}
+
+.textt h1{
+    text-align: justify;
+    /* Add other styles as needed */
+    margin-left:150px;
+	text-decoration: underline;
+}
+  .textt h2{
+    text-align:left;
+
+
+  }
+  .textt h3{
+    text-align:left;
+    margin-left:150px;
+	
+	
+  }
+
+nav{
+    width:100%;
+    height:80px;
+    display:flex;
+    background-color:aliceblue;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    border-radius: 5px;
+
+	justify-content: space-between;
+	text-align: right;
+
+}
+nav .logo img
+{
+   width: 60px;
+   
+  
+   height :60px;
+   left:0px;
+  
+   cursor:pointer;
+   margin-top: 10px ;
+   margin-left:10px;
+   margin-bottom: 10px;
+
+}
+nav ul{
+  list-style: none;
+  font-style: italic;
+  
+  
+  margin:0;
+  padding:0;
+  text-align: right;
+}
+nav ul li{
+    display:inline-block;
+    padding:0 15px;
+	margin-right: 0px;
+   
+  
+}
+nav ul li a{
+    color:black;
+    text-decoration: none;
+    transition:0.3s;
+    display:block;
+    padding:25px 20px;
+	margin-right: 0px;
+	align-items:end;
+	align-self: center;
+}
+input{
+    display:none;
+
+}  
+
+
+nav ul li a:hover{
+    color:brown;
+
+} 
+.container {
+	max-width: 400px;
+	width: 100%;
+	margin-top: 50px;
+	margin-left: 500px;
+	align-self:center;
+	background: transparent;
+	padding: 30px;
+	border-radius: 30px;
+}
+.img-area {
+	position: relative;
+	width: 100%;
+	height: 150px;
+	background-color:floralwhite;
+	margin-bottom: 30px;
+	border-radius: 15px;
+	overflow: hidden;
+	display: flex;
+	align-self: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+
+.img-area .icon {
+	font-size: 100px;
+}
+.img-area h3 {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 6px;
+}
+.img-area p {
+	color: #999;
+}
+.img-area p span {
+	font-weight: 600;
+}
+.img-area img {
+	/* position: absolute; */
+	top: 0;
+	left: 0;
+	
+	height: 100%;
+    align-items: center;
+	object-fit: cover;
+	object-position: center;
+	z-index: 100;
+}
+.img-area::before {
+	content: attr(data-img);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	color: #fff;
+	font-weight: 500;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	opacity: 0;
+	transition: all .3s ease;
+	z-index: 200;
+}
+.img-area.active:hover::before {
+	opacity: 1;
+}
+.select-image {
+	display: block;
+	width: 350px;
+	padding: 16px 0;
+	border-radius: 15px;
+	background-color: blue;
+	color:black;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+.select-image:hover {
+	background-color: burlywood;
+}

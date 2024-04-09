@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruitify</title>
+
+    <!-- External stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='recommend.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Background overlay -->
+    <div class="background"></div>
+
+    <!-- Navigation bar -->
+    <nav>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" />
+      </div>
+      <!-- Navigation links -->
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/manual">MANUAL</a></li>
+        <li><a href="/feedback">FEEDBACK</a></li>
+      </ul>
+    </nav>
+
+    <!-- Form for user preferences -->
+    <form action="/recommend" method="POST">
+      <!-- Modified form action and method -->
+      <div class="container">
+        <!-- Heading -->
+        <h1>Give your Preference</h1>
+
+        <!-- Dropdown for selecting type -->
+        <div class="id">
+          <select name="type">
+            <option value="">Select Type</option>
+            <option value="drink">Drink</option>
+            <option value="snacks">Snacks</option>
+            <option value="desserts">Desserts</option>
+          </select>
+          <i class="far fa-user"></i>
+          <!-- Placeholder icon -->
+        </div>
+
+        <!-- Dropdown for selecting taste preference -->
+        <div class="id">
+          <select name="taste">
+            <option value="">Select Taste Preference</option>
+            <option value="sweet">Sweet</option>
+            <option value="sour">Sour</option>
+            <option value="salty">Salty</option>
+          </select>
+          <i class="far fa-envelope"></i>
+          <!-- Placeholder icon -->
+        </div>
+
+        <!-- Dropdown for selecting dietary constraints -->
+        <div class="id">
+          <select name="dietary_constraints">
+            <option value="">Select Dietary Constraint</option>
+            <option value="dairy_free">Dairy Free</option>
+            <option value="low_fat">Low Fat</option>
+            <option value="nothing">Nothing</option>
+          </select>
+        </div>
+
+        <!-- Submit button -->
+        <input type="submit" value="Submit" />
+        <!-- Changed input type to submit -->
+      </div>
+    </form>
+  </body>
+</html>

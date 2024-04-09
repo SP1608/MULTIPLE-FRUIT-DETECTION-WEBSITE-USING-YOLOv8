@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
+    <title>Result</title>
+    <!-- External stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='result.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Background overlay -->
+    <div class="background"></div>
+
+    <!-- Navigation bar -->
+    <nav>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" />
+      </div>
+      <!-- Navigation links -->
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/manual">MANUAL</a></li>
+        <li><a href="/feedback">FEEDBACK</a></li>
+      </ul>
+    </nav>
+
+    <!-- Heading -->
+    <div class="heading">
+      <h1>RESULTS</h1>
+    </div>
+
+    <!-- Container for results -->
+    <div class="container">
+      <h2>Fruits Detected:</h2>
+      <!-- Text area to display detected fruits -->
+      <div class="id">
+        <textarea cols="50" rows="30" placeholder="">
+                {% for fruit in fruits %}
+                    {{ fruit }}
+                {% endfor %}
+            </textarea
+        >
+      </div>
+    </div>
+
+    <!-- Next button -->
+    <button type="button" class="recBtn" onclick="call_recommend()">
+      NEXT
+    </button>
+
+    <!-- JavaScript function to call recommend route -->
+    <script>
+      function call_recommend() {
+        // Redirect to the "/recommend" route using Flask
+        window.location.href = "/recommend";
+      }
+    </script>
+  </body>
+</html>
